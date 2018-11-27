@@ -8,22 +8,10 @@
 
 import UIKit
 
-struct Root: Decodable {
-    let count: Int
-    let next: Int?
-    let previous: Int?
-    let results: [Film]
-}
-
-struct Film: Decodable {
-    let title: String?
-    let director: String?
-}
-
 class FilmListViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-
+    
     var films = [Film]()
     
     override func viewDidLoad() {
@@ -39,14 +27,14 @@ class FilmListViewController: UIViewController, UITableViewDataSource {
             guard let data = data else { return }
             
             do {
-                let films = try JSONDecoder().decode(Root.self, from: data)
-                self.films = films.results
-                for film in self.films{
-                    print(film.title ?? String())
-                }
+                let films = try JSONDecoder().decode(FilmRoot.self, from: data)
+                    self.films = films.results
                 
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
             } catch let jsonError {
-                print("Error serializing json:", jsonError)
+                print("JSON ERROR:", jsonError)
             }
         }.resume()
     }
@@ -56,7 +44,24 @@ class FilmListViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FilmTableViewCell", for: indexPath) as!
+            FilmTableViewCell
+        
+        cell.titleLabel.text = films[indexPath.row].title
+        cell.titleLabel!.numberOfLines = 2
+        cell.titleLabel!.lineBreakMode = .byWordWrapping
+        cell.titleLabel!.font = UIFont.systemFont(ofSize: 14.0)
+        cell.selectionStyle = .none
+        return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailVC = segue.destination as? FilmDetailViewController, let indexPath = tableView.indexPathForSelectedRow {
+            
+            let film = films[indexPath.row]
+            detailVC.film = film
+            
+        }
     }
 }
 

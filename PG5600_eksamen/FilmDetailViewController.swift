@@ -8,11 +8,23 @@
 
 import UIKit
 
-class MovieDetailViewController: UIViewController {
+class FilmDetailViewController: UIViewController {
 
+    var film: Film!
+    
+    @IBOutlet weak var titelLabel: UILabel!
+    @IBOutlet weak var directorLabel: UILabel!
+    @IBOutlet weak var producerLabel: UILabel!
+    @IBOutlet weak var releaseDateLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        titelLabel.text = film.title
+        directorLabel.text = film.director
+        producerLabel.text = film.producer
+        releaseDateLabel.text = film.release_date
+        
         // Do any additional setup after loading the view.
     }
     
