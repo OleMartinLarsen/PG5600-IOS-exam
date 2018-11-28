@@ -11,12 +11,15 @@ import UIKit
 class CharacterViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var imageView: UIImageView!
     
     var characters = [Character]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getNextPage(url: "https://swapi.co/api/people/?page=1")
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
     func getNextPage(url: String){
@@ -52,7 +55,6 @@ class CharacterViewController: UIViewController, UICollectionViewDataSource, UIC
         cell.nameLabel.text = characters[indexPath.row].name
         return cell
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         

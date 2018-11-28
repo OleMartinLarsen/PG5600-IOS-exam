@@ -45,7 +45,7 @@ class FilmListViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FilmTableViewCell", for: indexPath) as!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as!
             FilmTableViewCell
         
         cell.titleLabel.text = films[indexPath.row].title

@@ -27,6 +27,7 @@
 		514BE7B421AC584B00C42BC7 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514BE7B321AC584B00C42BC7 /* CharacterViewController.swift */; };
 		514BE7B621AC586400C42BC7 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514BE7B521AC586400C42BC7 /* Character.swift */; };
 		514BE7BA21AC715500C42BC7 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514BE7B921AC715500C42BC7 /* CharacterCollectionViewCell.swift */; };
+		51605C1E21AE4CC3009F14D3 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51605C1D21AE4CC3009F14D3 /* RoundedButton.swift */; };
 		5180789A21ADC3A100CD1B8F /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180789921ADC3A100CD1B8F /* FavouritesViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		514BE7B321AC584B00C42BC7 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		514BE7B521AC586400C42BC7 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		514BE7B921AC715500C42BC7 /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
+		51605C1D21AE4CC3009F14D3 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		5180789921ADC3A100CD1B8F /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 				514BE7A221A9AB2B00C42BC7 /* LaunchScreen.storyboard */,
 				514BE7A521A9AB2B00C42BC7 /* Info.plist */,
 				514BE79D21A9AB2800C42BC7 /* PG5600_eksamen.xcdatamodeld */,
+				51605C1D21AE4CC3009F14D3 /* RoundedButton.swift */,
 			);
 			path = PG5600_eksamen;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				514BE7B421AC584B00C42BC7 /* CharacterViewController.swift in Sources */,
 				51289B8D21ADE72900AC759B /* FavouriteFilm+CoreDataProperties.swift in Sources */,
 				514BE7AC21A9B36300C42BC7 /* FilmDetailViewController.swift in Sources */,
+				51605C1E21AE4CC3009F14D3 /* RoundedButton.swift in Sources */,
 				514BE7B221AC352400C42BC7 /* Film.swift in Sources */,
 				51289B9721AE210700AC759B /* FilmFavouriteViewController.swift in Sources */,
 				514BE79921A9AB2800C42BC7 /* FilmListViewController.swift in Sources */,

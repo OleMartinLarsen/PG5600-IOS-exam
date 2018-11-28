@@ -18,32 +18,43 @@ class FavouritesViewController: UIViewController, UITableViewDataSource {
     
     var favouriteFilms = [FavouriteFilm]()
     var favouriteCharacters = [FavouriteCharacter]()
-
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         tableViewFilm.dataSource = self
         tableViewCharcters.dataSource = self
-
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
         let fetchRequestFavouriteFilm: NSFetchRequest<FavouriteFilm> = FavouriteFilm.fetchRequest()
         
         do {
+            self.favouriteFilms.removeAll()
+            let sort = NSSortDescriptor(key: "title", ascending: true)
+            fetchRequestFavouriteFilm.sortDescriptors = [sort]
             let favouriteFilms = try PersistenceService.context.fetch(fetchRequestFavouriteFilm)
             self.favouriteFilms = favouriteFilms
-            self.tableViewFilm.reloadData()
+            DispatchQueue.main.async {
+                self.tableViewFilm.reloadData()
+            }
         } catch {}
         
         let fetchRequestFavouriteCharacters: NSFetchRequest<FavouriteCharacter> = FavouriteCharacter.fetchRequest()
         
         do {
+            let sort = NSSortDescriptor(key: "name", ascending: true)
+            fetchRequestFavouriteCharacters.sortDescriptors = [sort]
             let favouriteCharacters = try PersistenceService.context.fetch(fetchRequestFavouriteCharacters)
             self.favouriteCharacters = favouriteCharacters
-            self.tableViewCharcters.reloadData()
         } catch {}
-        
         
     }
     
     @IBAction func indexChanged(_ sender: UISegmentedControl) {
+        
         switch segmentedControl.selectedSegmentIndex {
         case 0:
             tableViewCharcters.isHidden = true
@@ -54,9 +65,11 @@ class FavouritesViewController: UIViewController, UITableViewDataSource {
         default:
             break;
         }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         if(tableView == tableViewFilm) {
             return favouriteFilms.count
         }
@@ -67,6 +80,7 @@ class FavouritesViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if(tableView == tableViewFilm){
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as!
             FavouriteFilmTableViewCell
@@ -76,6 +90,7 @@ class FavouritesViewController: UIViewController, UITableViewDataSource {
             cell.selectionStyle = .none
             return cell
         }
+        
         else if(tableView == tableViewCharcters){
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as!
             FavouriteCharacterTableViewCell
@@ -87,9 +102,11 @@ class FavouritesViewController: UIViewController, UITableViewDataSource {
         }
         
         return UITableViewCell()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if let detailVC = segue.destination as? FilmFavouriteViewController, let indexPath = tableViewFilm.indexPathForSelectedRow {
             
             let favouriteFilm = favouriteFilms[indexPath.row]

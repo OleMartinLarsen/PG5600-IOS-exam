@@ -31,6 +31,7 @@ class FilmFavouriteViewController: UIViewController {
     @IBAction func onButtonClick(_ sender: Any) {
         PersistenceService.context.delete(film)
         PersistenceService.saveContext()
+        _ = navigationController?.popViewController(animated: true)
     }
 
 }
