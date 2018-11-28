@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class FilmListViewController: UIViewController, UITableViewDataSource {
     
@@ -48,9 +49,7 @@ class FilmListViewController: UIViewController, UITableViewDataSource {
             FilmTableViewCell
         
         cell.titleLabel.text = films[indexPath.row].title
-        cell.titleLabel!.numberOfLines = 2
-        cell.titleLabel!.lineBreakMode = .byWordWrapping
-        cell.titleLabel!.font = UIFont.systemFont(ofSize: 14.0)
+        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator;
         cell.selectionStyle = .none
         return cell
     }

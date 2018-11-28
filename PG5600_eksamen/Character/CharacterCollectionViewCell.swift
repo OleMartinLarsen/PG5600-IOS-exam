@@ -1,5 +1,5 @@
 //
-//  CharactersCollectionViewCell.swift
+//  CharacterCollectionViewCell.swift
 //  PG5600_eksamen
 //
 //  Created by Ole Martin Larsen on 26/11/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CharactersCollectionViewCell: UICollectionViewCell {
+class CharacterCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     

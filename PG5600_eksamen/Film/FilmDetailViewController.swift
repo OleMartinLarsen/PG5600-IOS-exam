@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class FilmDetailViewController: UIViewController {
 
@@ -20,23 +21,23 @@ class FilmDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = film.title
+        
         titelLabel.text = film.title
         directorLabel.text = film.director
         producerLabel.text = film.producer
         releaseDateLabel.text = film.release_date
         
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func onButtonClick(_ sender: Any) {
+        let favouriteFilm = FavouriteFilm(context: PersistenceService.context)
+        favouriteFilm.title = film.title
+        favouriteFilm.director = film.director
+        favouriteFilm.producer = film.producer
+        favouriteFilm.releasedate = film.release_date
+        PersistenceService.saveContext()
     }
-    */
-
+    
 }
