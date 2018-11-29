@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		51289B8A21ADE72900AC759B /* FavouriteCharacter+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51289B8621ADE72900AC759B /* FavouriteCharacter+CoreDataClass.swift */; };
-		51289B8B21ADE72900AC759B /* FavouriteCharacter+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51289B8721ADE72900AC759B /* FavouriteCharacter+CoreDataProperties.swift */; };
-		51289B8C21ADE72900AC759B /* FavouriteFilm+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51289B8821ADE72900AC759B /* FavouriteFilm+CoreDataClass.swift */; };
-		51289B8D21ADE72900AC759B /* FavouriteFilm+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51289B8921ADE72900AC759B /* FavouriteFilm+CoreDataProperties.swift */; };
 		51289B9121ADE7EF00AC759B /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51289B9021ADE7EF00AC759B /* PersistenceService.swift */; };
 		51289B9321ADF42300AC759B /* FavouriteFilmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51289B9221ADF42300AC759B /* FavouriteFilmTableViewCell.swift */; };
 		51289B9521AE021200AC759B /* FavouriteCharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51289B9421AE021200AC759B /* FavouriteCharacterTableViewCell.swift */; };
@@ -29,13 +25,13 @@
 		514BE7BA21AC715500C42BC7 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514BE7B921AC715500C42BC7 /* CharacterCollectionViewCell.swift */; };
 		51605C1E21AE4CC3009F14D3 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51605C1D21AE4CC3009F14D3 /* RoundedButton.swift */; };
 		5180789A21ADC3A100CD1B8F /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180789921ADC3A100CD1B8F /* FavouritesViewController.swift */; };
+		519B87C721AF57150090BD3A /* FavouriteCharacter+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519B87C321AF57150090BD3A /* FavouriteCharacter+CoreDataClass.swift */; };
+		519B87C821AF57150090BD3A /* FavouriteCharacter+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519B87C421AF57150090BD3A /* FavouriteCharacter+CoreDataProperties.swift */; };
+		519B87C921AF57150090BD3A /* FavouriteFilm+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519B87C521AF57150090BD3A /* FavouriteFilm+CoreDataClass.swift */; };
+		519B87CA21AF57150090BD3A /* FavouriteFilm+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519B87C621AF57150090BD3A /* FavouriteFilm+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		51289B8621ADE72900AC759B /* FavouriteCharacter+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteCharacter+CoreDataClass.swift"; sourceTree = "<group>"; };
-		51289B8721ADE72900AC759B /* FavouriteCharacter+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteCharacter+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		51289B8821ADE72900AC759B /* FavouriteFilm+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteFilm+CoreDataClass.swift"; sourceTree = "<group>"; };
-		51289B8921ADE72900AC759B /* FavouriteFilm+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteFilm+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		51289B9021ADE7EF00AC759B /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		51289B9221ADF42300AC759B /* FavouriteFilmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteFilmTableViewCell.swift; sourceTree = "<group>"; };
 		51289B9421AE021200AC759B /* FavouriteCharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCharacterTableViewCell.swift; sourceTree = "<group>"; };
@@ -56,6 +52,10 @@
 		514BE7B921AC715500C42BC7 /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		51605C1D21AE4CC3009F14D3 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		5180789921ADC3A100CD1B8F /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		519B87C321AF57150090BD3A /* FavouriteCharacter+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteCharacter+CoreDataClass.swift"; sourceTree = "<group>"; };
+		519B87C421AF57150090BD3A /* FavouriteCharacter+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteCharacter+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		519B87C521AF57150090BD3A /* FavouriteFilm+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteFilm+CoreDataClass.swift"; sourceTree = "<group>"; };
+		519B87C621AF57150090BD3A /* FavouriteFilm+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteFilm+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,11 +72,11 @@
 		51289B9821AE22F900AC759B /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				519B87C321AF57150090BD3A /* FavouriteCharacter+CoreDataClass.swift */,
+				519B87C421AF57150090BD3A /* FavouriteCharacter+CoreDataProperties.swift */,
+				519B87C521AF57150090BD3A /* FavouriteFilm+CoreDataClass.swift */,
+				519B87C621AF57150090BD3A /* FavouriteFilm+CoreDataProperties.swift */,
 				51289B9021ADE7EF00AC759B /* PersistenceService.swift */,
-				51289B8621ADE72900AC759B /* FavouriteCharacter+CoreDataClass.swift */,
-				51289B8721ADE72900AC759B /* FavouriteCharacter+CoreDataProperties.swift */,
-				51289B8821ADE72900AC759B /* FavouriteFilm+CoreDataClass.swift */,
-				51289B8921ADE72900AC759B /* FavouriteFilm+CoreDataProperties.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -219,23 +219,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				514BE7B421AC584B00C42BC7 /* CharacterViewController.swift in Sources */,
-				51289B8D21ADE72900AC759B /* FavouriteFilm+CoreDataProperties.swift in Sources */,
 				514BE7AC21A9B36300C42BC7 /* FilmDetailViewController.swift in Sources */,
 				51605C1E21AE4CC3009F14D3 /* RoundedButton.swift in Sources */,
 				514BE7B221AC352400C42BC7 /* Film.swift in Sources */,
 				51289B9721AE210700AC759B /* FilmFavouriteViewController.swift in Sources */,
 				514BE79921A9AB2800C42BC7 /* FilmListViewController.swift in Sources */,
 				514BE79721A9AB2800C42BC7 /* AppDelegate.swift in Sources */,
+				519B87C721AF57150090BD3A /* FavouriteCharacter+CoreDataClass.swift in Sources */,
 				51289B9321ADF42300AC759B /* FavouriteFilmTableViewCell.swift in Sources */,
-				51289B8C21ADE72900AC759B /* FavouriteFilm+CoreDataClass.swift in Sources */,
+				519B87C921AF57150090BD3A /* FavouriteFilm+CoreDataClass.swift in Sources */,
 				514BE79F21A9AB2800C42BC7 /* PG5600_eksamen.xcdatamodeld in Sources */,
-				51289B8A21ADE72900AC759B /* FavouriteCharacter+CoreDataClass.swift in Sources */,
 				51289B9521AE021200AC759B /* FavouriteCharacterTableViewCell.swift in Sources */,
-				51289B8B21ADE72900AC759B /* FavouriteCharacter+CoreDataProperties.swift in Sources */,
 				51289B9121ADE7EF00AC759B /* PersistenceService.swift in Sources */,
 				514BE7AE21AB04FA00C42BC7 /* FilmTableViewCell.swift in Sources */,
 				514BE7BA21AC715500C42BC7 /* CharacterCollectionViewCell.swift in Sources */,
 				5180789A21ADC3A100CD1B8F /* FavouritesViewController.swift in Sources */,
+				519B87CA21AF57150090BD3A /* FavouriteFilm+CoreDataProperties.swift in Sources */,
+				519B87C821AF57150090BD3A /* FavouriteCharacter+CoreDataProperties.swift in Sources */,
 				514BE7B621AC586400C42BC7 /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

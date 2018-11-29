@@ -41,10 +41,13 @@ class FilmListViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return films.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as!
             FilmTableViewCell
         
@@ -52,9 +55,11 @@ class FilmListViewController: UIViewController, UITableViewDataSource {
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator;
         cell.selectionStyle = .none
         return cell
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if let detailVC = segue.destination as? FilmDetailViewController, let indexPath = tableView.indexPathForSelectedRow {
             
             let film = films[indexPath.row]

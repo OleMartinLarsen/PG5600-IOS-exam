@@ -2,7 +2,7 @@
 //  FavouriteFilm+CoreDataProperties.swift
 //  PG5600_eksamen
 //
-//  Created by Ole Martin Larsen on 27/11/2018.
+//  Created by Ole Martin Larsen on 29/11/2018.
 //  Copyright © 2018 Høyskolen Kristiania. All rights reserved.
 //
 //
@@ -17,9 +17,9 @@ extension FavouriteFilm {
         return NSFetchRequest<FavouriteFilm>(entityName: "FavouriteFilm")
     }
 
-    @NSManaged public var title: String?
     @NSManaged public var director: String?
     @NSManaged public var producer: String?
     @NSManaged public var releasedate: String?
+    @NSManaged public var title: String?
 
 }

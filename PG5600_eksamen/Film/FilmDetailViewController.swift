@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class FilmDetailViewController: UIViewController {
-
+    
     var film: Film!
     
     @IBOutlet weak var titelLabel: UILabel!
@@ -37,7 +37,7 @@ class FilmDetailViewController: UIViewController {
         fetchRequestFavouriteFilm.predicate = NSPredicate(format: "title = %@", film.title!)
         
         do{
-            if let favoruiteFilm = try PersistenceService.context.fetch(fetchRequestFavouriteFilm).first {
+            if (try PersistenceService.context.fetch(fetchRequestFavouriteFilm).first) != nil {
                 favoruiteButton.setTitle("Delete from favourites", for: .normal)
             } else {
                 favoruiteButton.setTitle("Add to favourites", for: .normal)

@@ -17,4 +17,5 @@ struct CharacterRoot: Decodable {
 
 struct Character: Decodable {
     let name: String?
+    let films: [String]
 }

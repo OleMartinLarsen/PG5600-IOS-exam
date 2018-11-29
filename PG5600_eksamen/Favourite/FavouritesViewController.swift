@@ -15,9 +15,14 @@ class FavouritesViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableViewCharcters: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    @IBOutlet weak var titleRecommended: UILabel!
+    @IBOutlet weak var movieRecommended: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     var favouriteFilms = [FavouriteFilm]()
     var favouriteCharacters = [FavouriteCharacter]()
+    
+    //let [“Jar Jar’s Topp 1-liste”, “Jabbas favorittfilm”, “Yoda du måda se denne”, “Prinsesse Leia’n på DVD”]
     
     override func viewDidLoad() {
         
@@ -49,6 +54,9 @@ class FavouritesViewController: UIViewController, UITableViewDataSource {
             fetchRequestFavouriteCharacters.sortDescriptors = [sort]
             let favouriteCharacters = try PersistenceService.context.fetch(fetchRequestFavouriteCharacters)
             self.favouriteCharacters = favouriteCharacters
+            DispatchQueue.main.async {
+                self.tableViewCharcters.reloadData()
+            }
         } catch {}
         
     }
@@ -59,9 +67,14 @@ class FavouritesViewController: UIViewController, UITableViewDataSource {
         case 0:
             tableViewCharcters.isHidden = true
             tableViewFilm.isHidden = false
+            movieRecommended.isHidden = true
+            titleRecommended.isHidden = true
+            
         case 1:
             tableViewFilm.isHidden = true
             tableViewCharcters.isHidden = false
+            movieRecommended.isHidden = false
+            titleRecommended.isHidden = false
         default:
             break;
         }
@@ -82,7 +95,7 @@ class FavouritesViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if(tableView == tableViewFilm){
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cellf", for: indexPath) as!
             FavouriteFilmTableViewCell
             
             cell.titleLabel.text = favouriteFilms[indexPath.row].title
@@ -92,11 +105,19 @@ class FavouritesViewController: UIViewController, UITableViewDataSource {
         }
         
         else if(tableView == tableViewCharcters){
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cellc", for: indexPath) as!
             FavouriteCharacterTableViewCell
             
-            cell.titleLabel.text = favouriteCharacters[indexPath.row].name
-            cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator;
+            var episodeIds = ""
+            let episodes = favouriteCharacters[indexPath.row].episodeid
+            for episode in episodes! {
+                episodeIds = episodeIds + "\(episode)" + ", "
+            }
+    
+            
+            cell.nameLabel.text = favouriteCharacters[indexPath.row].name
+            cell.episodeLabel.text = episodeIds
+            
             cell.selectionStyle = .none
             return cell
         }
@@ -105,6 +126,25 @@ class FavouritesViewController: UIViewController, UITableViewDataSource {
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if(tableView == tableViewCharcters) {
+            print(favouriteCharacters[indexPath.row])
+        }
+        //let indexPath = tableView.indexPathForSelectedRow
+        
+        //getting the current cell from the index path
+        //let currentCell = tableViewCharcters.cellForRow(at: indexPath!) as! FavouriteCharacterTableViewCell
+        
+        //currentCell.isSelected
+        
+        
+        
+        
+        
+        
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let detailVC = segue.destination as? FilmFavouriteViewController, let indexPath = tableViewFilm.indexPathForSelectedRow {
