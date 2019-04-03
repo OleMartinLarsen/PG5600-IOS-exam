@@ -1,2 +1,2 @@
-# PG5600_eksamen - IOS Programming
+# PG5600 Eksamen - IOS Programmering
 
